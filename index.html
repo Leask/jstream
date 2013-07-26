@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <head>
+        <script src="jstream.js" type="text/javascript"></script>
+        <script>
+
+            var deadCallback = function() {
+                console.log('streaming is dead');
+            };
+
+            var streamCallback = function(rawData) {
+                var data = JSON.parse(rawData);
+                console.log(data);
+            };
+
+            jstream.init(
+                "STREAMING_URL", // PUT YOUR STREAMING URL HERE
+                streamCallback, deadCallback
+            );
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
